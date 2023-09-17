@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bamboozi.Dev.MinefieldGame.ConsoleUI", "Bamboozi.Dev.MinefieldGame.ConsoleUI\Bamboozi.Dev.MinefieldGame.ConsoleUI.csproj", "{8C583373-964C-4C05-9B78-20F1C0438698}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bamboozi.Dev.MinefieldGame.Service", "Bamboozi.Dev.MinefieldGame.Service\Bamboozi.Dev.MinefieldGame.Service.csproj", "{830723A2-FE1A-4113-A517-CAAC54B36C0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bamboozi.Dev.MinefieldGame.Controller", "Bamboozi.Dev.MinefieldGame.Controller\Bamboozi.Dev.MinefieldGame.Controller.csproj", "{4825E577-D368-4811-9D0D-9F983A1DA6BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bamboozi.Dev.MinefieldGame.Bootstrap", "Bamboozi.Dev.MinefieldGame.Bootstrap\Bamboozi.Dev.MinefieldGame.Bootstrap.csproj", "{3FDA616F-A040-4C8A-9CB9-8CE32BE55629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bamboozi.Dev.MinefieldGame.StateRepository", "Bamboozi.Dev.MinefieldGame.StateRepository\Bamboozi.Dev.MinefieldGame.StateRepository.csproj", "{2D002E3C-1259-4D7F-BD15-F33FE8A1323D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bamboozi.Dev.MinefieldGame.Tests", "Bamboozi.Dev.MinefieldGame.Tests\Bamboozi.Dev.MinefieldGame.Tests.csproj", "{846A6D3C-DFB1-46C4-B1B9-BEF15617D6BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C583373-964C-4C05-9B78-20F1C0438698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C583373-964C-4C05-9B78-20F1C0438698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C583373-964C-4C05-9B78-20F1C0438698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C583373-964C-4C05-9B78-20F1C0438698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{830723A2-FE1A-4113-A517-CAAC54B36C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{830723A2-FE1A-4113-A517-CAAC54B36C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{830723A2-FE1A-4113-A517-CAAC54B36C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{830723A2-FE1A-4113-A517-CAAC54B36C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4825E577-D368-4811-9D0D-9F983A1DA6BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4825E577-D368-4811-9D0D-9F983A1DA6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4825E577-D368-4811-9D0D-9F983A1DA6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4825E577-D368-4811-9D0D-9F983A1DA6BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FDA616F-A040-4C8A-9CB9-8CE32BE55629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDA616F-A040-4C8A-9CB9-8CE32BE55629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDA616F-A040-4C8A-9CB9-8CE32BE55629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDA616F-A040-4C8A-9CB9-8CE32BE55629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D002E3C-1259-4D7F-BD15-F33FE8A1323D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D002E3C-1259-4D7F-BD15-F33FE8A1323D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D002E3C-1259-4D7F-BD15-F33FE8A1323D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D002E3C-1259-4D7F-BD15-F33FE8A1323D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{846A6D3C-DFB1-46C4-B1B9-BEF15617D6BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{846A6D3C-DFB1-46C4-B1B9-BEF15617D6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{846A6D3C-DFB1-46C4-B1B9-BEF15617D6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{846A6D3C-DFB1-46C4-B1B9-BEF15617D6BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B9F32A3-FBC9-4FE3-9557-EF127AB34D34}
+	EndGlobalSection
+EndGlobal
