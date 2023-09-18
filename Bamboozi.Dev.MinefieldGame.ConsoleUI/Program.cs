@@ -44,17 +44,25 @@ namespace Bamboozi.Dev.MinefieldGame.ConsoleUI
                     else
                     {
                         Console.WriteLine($"You moved {response.MoveType} to {response.UserState.Location}");
+
                         if (response.MoveOutcome == MoveOutcome.Mine)
                         {
-                            Console.WriteLine($"BOOM");
+                            Console.WriteLine($"BOOM!!");
                         }
-                        if (response.MoveOutcome == MoveOutcome.Lose || response.MoveOutcome == MoveOutcome.Win)
+                        if (response.MoveOutcome == MoveOutcome.Lose)
+                        {
+                            Console.WriteLine($"BOOM!! GAME OVER: {response.MoveOutcome}");
+                            Console.WriteLine($"You have made {response.UserState.MovesTaken} moves and have {response.UserState.LivesRemaining} lives remaining");
+                            break;
+                        }
+                        if (response.MoveOutcome == MoveOutcome.Win)
                         {
                             Console.WriteLine($"GAME OVER: {response.MoveOutcome}");
                             Console.WriteLine($"You have made {response.UserState.MovesTaken} moves and have {response.UserState.LivesRemaining} lives remaining");
                             break;
                         }
                     }
+
                     Console.WriteLine($"You have made {response.UserState.MovesTaken} moves and have {response.UserState.LivesRemaining} lives remaining");
                 }
             }

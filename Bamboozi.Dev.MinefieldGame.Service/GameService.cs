@@ -45,6 +45,7 @@ namespace Bamboozi.Dev.MinefieldGame.Service
                     return new MoveResponse(moveType, MoveOutcome.OutOfBounds, currentState);
                 }
 
+                // TODO: remove mines after exploded
                 var isMined = _minesState.IsMined(nextLocation);
 
                 var updatedState = new UserState
