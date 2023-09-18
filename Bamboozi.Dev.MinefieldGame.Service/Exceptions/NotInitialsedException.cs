@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bamboozi.Dev.MinefieldGame.Service
+namespace Bamboozi.Dev.MinefieldGame.Service.Exceptions
 {
-    public class InvalidUserStateException : Exception
+    public class NotInitialsedException : Exception
     {
     }
 }

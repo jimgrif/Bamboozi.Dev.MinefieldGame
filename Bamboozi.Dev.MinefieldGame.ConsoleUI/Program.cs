@@ -10,13 +10,11 @@ namespace Bamboozi.Dev.MinefieldGame.ConsoleUI
     {
         static void Main(string[] args)
         {
-            // NOTE - the Build Action and Copy to Output Directory properties of the JSON file must be set to Content and Copy if newer (or Copy always) respectively
             ServiceCollection services = new ServiceCollection();
             IServiceProvider serviceProvider = services
                 .AddGameService()
                 .BuildServiceProvider();
 
-            // GetService<>() requires Microsoft.Extensions.DependencyInjection
             IGameController gameController = serviceProvider.GetService<IGameController>()!;
             var initial = gameController.StartGame();
 
@@ -25,7 +23,16 @@ namespace Bamboozi.Dev.MinefieldGame.ConsoleUI
             while (true)
             {
                 var key = Console.ReadKey(true);
-                var move = GetUserMove(key.KeyChar);
+
+                var move = key.KeyChar switch
+                {
+                    'u' => new UserMove { MoveType = MoveType.Up },
+                    'd' => new UserMove { MoveType = MoveType.Down },
+                    'l' => new UserMove { MoveType = MoveType.Left },
+                    'r' => new UserMove { MoveType = MoveType.Right },
+                    'x' => new UserMove { IsExit = true },
+                    _ => new UserMove { IsValid = false }
+                };
 
                 if (move.IsExit)
                 {
@@ -37,48 +44,25 @@ namespace Bamboozi.Dev.MinefieldGame.ConsoleUI
                 {
                     var response = gameController.ProcessMove(move.MoveType);
                     Console.WriteLine();
-                    if (response.MoveOutcome == MoveOutcome.OutOfBounds)
-                    {
-                        Console.WriteLine($"A move {response.MoveType} is not possible!");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"You moved {response.MoveType} to {response.UserState.Location}");
 
-                        if (response.MoveOutcome == MoveOutcome.Mine)
-                        {
-                            Console.WriteLine($"BOOM!!");
-                        }
-                        if (response.MoveOutcome == MoveOutcome.Lose)
-                        {
-                            Console.WriteLine($"BOOM!! GAME OVER: {response.MoveOutcome}");
-                            Console.WriteLine($"You have made {response.UserState.MovesTaken} moves and have {response.UserState.LivesRemaining} lives remaining");
-                            break;
-                        }
-                        if (response.MoveOutcome == MoveOutcome.Win)
-                        {
-                            Console.WriteLine($"GAME OVER: {response.MoveOutcome}");
-                            Console.WriteLine($"You have made {response.UserState.MovesTaken} moves and have {response.UserState.LivesRemaining} lives remaining");
-                            break;
-                        }
-                    }
+                    var outcomeMessage = response.MoveOutcome switch
+                    {
+                        MoveOutcome.OutOfBounds => $"A move {response.MoveType} is not possible!",
+                        MoveOutcome.Mine => $"BOOM!!",
+                        MoveOutcome.Lose => $"BOOM!! GAME OVER: {response.MoveOutcome}",
+                        MoveOutcome.Win => $"GAME OVER: {response.MoveOutcome}",
+                        _ => null // OK
+                    };
 
-                    Console.WriteLine($"You have made {response.UserState.MovesTaken} moves and have {response.UserState.LivesRemaining} lives remaining");
+                    if (outcomeMessage != null)
+                        Console.WriteLine(outcomeMessage);
+
+                    Console.WriteLine($"Current position: {response.UserState.Location}. You have made {response.UserState.MovesTaken} moves and have {response.UserState.LivesRemaining} lives remaining");
+
+                    if (response.MoveOutcome == MoveOutcome.Lose || response.MoveOutcome == MoveOutcome.Win)
+                        break;
                 }
             }
-        }
-
-        static UserMove GetUserMove(char key)
-        {
-            return key switch
-            {
-                'u' => new UserMove { MoveType = MoveType.Up},
-                'd' => new UserMove { MoveType = MoveType.Down },
-                'l' => new UserMove { MoveType = MoveType.Left },
-                'r' => new UserMove { MoveType = MoveType.Right },
-                'x' => new UserMove { IsExit = true },
-                _ => new UserMove { IsValid = false }
-            };
         }
     }
 }

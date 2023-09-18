@@ -1,4 +1,5 @@
 ﻿using Bamboozi.Dev.MinefieldGame.Service.Dto;
+using Bamboozi.Dev.MinefieldGame.Service.Exceptions;
 using Bamboozi.Dev.MinefieldGame.StateRepository;
 using Bamboozi.Dev.MinefieldGame.StateRepository.Models;
 using System.Runtime.CompilerServices;
