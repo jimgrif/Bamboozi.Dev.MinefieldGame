@@ -10,10 +10,10 @@ namespace Bamboozi.Dev.MinefieldGame.Bootstrap
     {
         public static IServiceCollection AddGameService(this IServiceCollection services)
         {
-            services.AddSingleton<IGameController, GameController>();
-            services.AddSingleton<IGameService, GameService>();
-            services.AddSingleton<IGameState, GameState>();
-            services.AddSingleton<IMinesState, MinesState>();
+            services.AddScoped<IGameController, GameController>();
+            services.AddScoped<IGameService, GameService>();
+            services.AddScoped<IGameState, GameState>();
+            services.AddScoped<IMinesState, MinesState>();
 
             return services;
         }
